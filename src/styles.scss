@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+/* Sidebar styles */
+.sidebar {
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar .nav-link {
+  color: #333;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.navbar {
+  z-index: 1;
+}
