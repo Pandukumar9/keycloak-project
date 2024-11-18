@@ -10,13 +10,25 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { DynamicFormComponent } from './pages/dynamic-form/dynamic-form.component';
+import { DynamicForm2Component } from './pages/dynamic-form-2/dynamic-form-2.component';
+import { DynamicForm3Component } from './pages/dynamic-form-3/dynamic-form-3.component';
+import { DynamicForm4Component } from './pages/dynamic-form-4/dynamic-form-4.component';
+import { FormControlComponent } from './pages/form-control/form-control.component';
+import { ReactiveFormComponent } from './pages/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     KeycloakComponent,
     DetailsComponent,
-    DashboardComponent
+    DashboardComponent,
+    DynamicFormComponent,
+    DynamicForm2Component,
+    DynamicForm3Component,
+    DynamicForm4Component,
+    FormControlComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,

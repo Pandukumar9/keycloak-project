@@ -1,0 +1,38 @@
+<!-- <form [formGroup]="exampleForm" (ngSubmit)="onSubmit()">
+  <app-form-control
+    label="Username"
+    [control]="exampleForm.get('username')"
+    placeholder="Enter your username"
+  ></app-form-control>
+
+  <app-form-control
+    label="Email"
+    [control]="exampleForm.get('email')"
+    placeholder="Enter your email"
+  ></app-form-control>
+
+  <div formArrayName="hobbies">
+    <div *ngFor="let hobby of hobbies.controls; let i = index">
+      <app-form-control
+        label="Hobby"
+        [control]="hobby"
+        placeholder="Enter your hobby"
+      ></app-form-control>
+      <button type="button" (click)="removeHobby(i)">Remove Hobby</button>
+    </div>
+    <button type="button" (click)="addHobby()">Add Hobby</button>
+  </div>
+
+  <button type="submit" [disabled]="exampleForm.invalid">Submit</button>
+</form> -->
+
+<form [formGroup]="exampleForm" (ngSubmit)="onSubmit()">
+  <app-form-control
+    [label]="'Username'"
+    [type]="'text'"
+    [control]="exampleForm.get('username')"
+    [placeholder]="'Enter your username'"
+  ></app-form-control>
+
+  <button type="submit" [disabled]="exampleForm.invalid">Submit</button>
+</form>

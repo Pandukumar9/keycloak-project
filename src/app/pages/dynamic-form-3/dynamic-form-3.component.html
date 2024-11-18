@@ -1,0 +1,78 @@
+<div class="container">
+  <form [formGroup]="genAIFormGroup" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="searchKeyword">Search Keyword:</label>
+      <input
+        id="searchKeyword"
+        formControlName="searchKeyword"
+        type="text"
+        class="form-control"
+      />
+    </div>
+
+    <div formArrayName="userInputFormArray">
+      <div
+        *ngFor="let group of userInputFormArray.controls; let i = index; trackBy: trackByFn"
+        [formGroupName]="i"
+        class="form-group-container"
+      >
+        <div class="form-group">
+          <label for="fname-{{ i }}">First Name:</label>
+          <input
+            id="fname-{{ i }}"
+            formControlName="fname"
+            type="text"
+            class="form-control"
+          />
+          <div class="text-danger" *ngIf="isFieldInvalid(i, 'fname')">
+            First Name is required (min 3 characters).
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lname-{{ i }}">Last Name:</label>
+          <input
+            id="lname-{{ i }}"
+            formControlName="lname"
+            type="text"
+            class="form-control"
+          />
+          <div class="text-danger" *ngIf="isFieldInvalid(i, 'lname')">
+            Last Name is required (min 3 characters).
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email-{{ i }}">Email:</label>
+          <input
+            id="email-{{ i }}"
+            formControlName="email"
+            type="email"
+            class="form-control"
+          />
+          <div class="text-danger" *ngIf="isFieldInvalid(i, 'email')">
+            A valid Email is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="city-{{ i }}">City:</label>
+          <input
+            id="city-{{ i }}"
+            formControlName="city"
+            type="text"
+            class="form-control"
+          />
+          <div class="text-danger" *ngIf="isFieldInvalid(i, 'city')">
+            City is required (min 3 characters).
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-danger" (click)="removeFormGroup(i)">Remove</button>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="addFormGroup()">Add More</button>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

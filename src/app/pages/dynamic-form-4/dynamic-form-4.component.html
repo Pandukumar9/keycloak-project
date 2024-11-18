@@ -1,0 +1,13 @@
+<!-- <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+  <div formArrayName="phones">
+    <div *ngFor="let phone of userForm.get('phones')?.controls; let i = index">
+      <label for="phone-{{ i }}">Phone {{ i + 1 }}</label>
+      <input id="phone-{{ i }}" [formControlName]="i" />
+      <button type="button" (click)="removePhone(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addPhone()">Add Phone</button>
+  </div>
+
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form> -->
